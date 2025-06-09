@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: '/', // or just remove it — Vercel handles routing perfectly
+  base: '/', // Works best for root deployments on Vercel
 });

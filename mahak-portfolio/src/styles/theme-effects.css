@@ -1,0 +1,117 @@
+/* ============================================= */
+/*           GENERAL THEME EFFECTS & KEYFRAMES   */
+/* ============================================= */
+/* For when you want ✨drama✨ in every transition */
+
+/* ===== ACCESSIBILITY: Respect those who get dizzy ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+  }
+}
+
+/* ===== Ripple (Rain Form Inputs) ===== */
+@keyframes rainRipple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(174, 194, 224, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 8px transparent;
+  }
+}
+
+/* ===== Star Pulse (Moon Inputs) ===== */
+@keyframes starPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(61, 90, 254, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(61, 90, 254, 0.6);
+  }
+}
+
+/* ===== Lightning Strike (Rain Resume Hover) ===== */
+@keyframes lightningFlash {
+  0%   { opacity: 0; transform: translateY(-100%) rotate(45deg); }
+  10%  { opacity: 0.8; }
+  20%  { opacity: 0; }
+  30%  { opacity: 0.6; }
+  40%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* ===== Frost Expansion (Snow Resume Hover) ===== */
+@keyframes frostSpread {
+  0% {
+    clip-path: circle(0% at 50% 50%);
+  }
+  100% {
+    clip-path: circle(100% at 50% 50%);
+  }
+}
+
+/* ===== Starburst Glow (Moon Resume Hover) ===== */
+@keyframes starShine {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+
+/* ===== Snowflake Fall (Snow Theme) ===== */
+@keyframes snow {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+/* ===== Rain Drop Fall ===== */
+@keyframes rain {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+/* ===== Ripple for Rain Impact ===== */
+@keyframes ripple {
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+/* ===== Moon Glow (Moon Orb) ===== */
+@keyframes moonGlow {
+  0% {
+    box-shadow:
+      0 0 20px #f5f3ce88,
+      25px 15px 0 -3px rgba(0, 0, 0, 0.1),
+      40px 35px 0 -5px rgba(0, 0, 0, 0.1),
+      15px 40px 0 -2px rgba(0, 0, 0, 0.1);
+  }
+
+  100% {
+    box-shadow:
+      0 0 40px #f5f3cecc,
+      25px 15px 0 -3px rgba(0, 0, 0, 0.1),
+      40px 35px 0 -5px rgba(0, 0, 0, 0.1),
+      15px 40px 0 -2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* ===== Star Twinkle (Background) ===== */
+@keyframes twinkle {
+  0%   { opacity: 0.4; transform: scale(0.95); filter: brightness(1); }
+  50%  { opacity: 1; transform: scale(1.15); filter: brightness(1.8); }
+  100% { opacity: 0.4; transform: scale(0.95); filter: brightness(1); }
+}

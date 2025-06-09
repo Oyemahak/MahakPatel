@@ -1,0 +1,136 @@
+/* =============================================== */
+/*              🌙 MOON THEME STYLES                */
+/*        "Because night owls deserve style too!"  */
+/* =============================================== */
+
+/* ==== Body background for moon theme ==== */
+.moon-theme {
+  background-color: #101827; /* Deep night sky */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* ==== Moon Element: With GPU-optimized Glow & Craters ==== */
+.moon {
+  position: fixed;
+  top: 10vh;
+  right: 5vw;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #f5f3ce;
+  z-index: -1;
+
+  box-shadow:
+    0 0 15px #f5f3ce88,
+    20px 10px 0 -2px rgba(0, 0, 0, 0.15),
+    35px 25px 0 -4px rgba(0, 0, 0, 0.15),
+    10px 30px 0 -2px rgba(0, 0, 0, 0.1);
+
+  animation: moonGlow 6s ease-in-out infinite alternate;
+  will-change: box-shadow;
+}
+
+/* ==== Optional crater overlays (simplified for GPU) ==== */
+.moon::before,
+.moon::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  width: 15%;
+  height: 15%;
+}
+.moon::before {
+  top: 25%;
+  left: 30%;
+}
+.moon::after {
+  bottom: 20%;
+  right: 25%;
+}
+
+/* ==== Moon glow animation ==== */
+@keyframes moonGlow {
+  0% {
+    box-shadow:
+      0 0 15px #f5f3ce88,
+      20px 10px 0 -2px rgba(0, 0, 0, 0.15),
+      35px 25px 0 -4px rgba(0, 0, 0, 0.15),
+      10px 30px 0 -2px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow:
+      0 0 30px #f5f3cecc,
+      20px 10px 0 -2px rgba(0, 0, 0, 0.15),
+      35px 25px 0 -4px rgba(0, 0, 0, 0.15),
+      10px 30px 0 -2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* ==== Twinkling Stars ==== */
+.star {
+  position: fixed;
+  background-color: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  animation: twinkle 3s infinite alternate ease-in-out;
+  filter: blur(0.5px);
+  will-change: opacity, transform;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.95);
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: brightness(1.7);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(0.95);
+    filter: brightness(1);
+  }
+}
+
+/* ==== Resume Button Shine in Moon Theme ==== */
+.moon-theme .resume-button:hover {
+  background: #3d5afe;
+  color: white;
+  position: relative;
+  box-shadow: 0 0 20px rgba(61, 90, 254, 0.6),
+              0 0 40px rgba(61, 90, 254, 0.3),
+              0 0 60px rgba(61, 90, 254, 0.2);
+}
+
+.moon-theme .resume-button:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+  opacity: 0;
+  animation: starShine 1.5s ease-out;
+}
+
+@keyframes starShine {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}

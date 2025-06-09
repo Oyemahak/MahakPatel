@@ -1,0 +1,38 @@
+/* ============================================= */
+/*            THEME SWITCHER BUTTON STYLES       */
+/* ============================================= */
+/* Because even toggles deserve fashion sense! 💅 */
+
+.theme-switcher {
+    display: flex;
+    gap: 12px;
+    margin-left: 20px;
+}
+
+.theme-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #60A5FA;
+}
+
+.theme-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.theme-btn.active {
+    background: #3B82F6;
+    color: white;
+}
+
+.theme-btn i {
+    font-size: 16px;
+}

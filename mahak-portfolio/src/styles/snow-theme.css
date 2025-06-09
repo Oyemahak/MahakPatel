@@ -1,0 +1,67 @@
+/* ================================================== */
+/*               ❄️ SNOW THEME - FROSTY CHILL         */
+/* ================================================== */
+
+/* === Input Frost Effects + Snow Emoji === */
+.snow-theme input,
+.snow-theme textarea {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ctext x='12' y='18' font-size='16' text-anchor='middle'%3E❄️%3C/text%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 20px;
+  transition: all 0.3s ease;
+}
+
+.snow-theme input:focus,
+.snow-theme textarea:focus {
+  border-color: #bbdefb;
+  box-shadow:
+    0 0 15px rgba(200, 230, 255, 0.7),
+    inset 0 0 10px rgba(255, 255, 255, 0.3);
+  background-color: rgba(224, 240, 255, 0.2);
+}
+
+/* === Background Gradient Like a Cold Sky === */
+.snow-theme {
+  background: linear-gradient(to bottom, #0f172a, #1e3a8a);
+}
+
+/* === Frosty Resume Button on Hover === */
+.snow-theme .resume-button:hover {
+  position: relative;
+  background: #e1f5fe;
+  color: #0d47a1;
+  border: 2px solid #bbdefb;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgba(200, 230, 255, 0.8),
+    inset 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.snow-theme .resume-button:hover::after {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  animation: frostSpread 1.5s linear infinite;
+}
+
+/* === Animated ❄️ Snowflakes === */
+.snowflake {
+  position: fixed;
+  color: white;
+  font-size: 1em;
+  animation: snow linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* === Snowfall Animation Keyframe === */
+@keyframes snow {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}

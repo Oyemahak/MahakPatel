@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=./",  // Added --base flag
+    "build": "vite build --base=./",
     "lint": "eslint .",
     "preview": "vite preview",
-    "vercel-build": "npm run build"   // Explicit Vercel build script
+    "vercel-build": "npm run build"
   },
   "dependencies": {
     "react": "^19.1.0",

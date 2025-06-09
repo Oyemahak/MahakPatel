@@ -83,7 +83,7 @@ This portfolio is **not** open-source. The code contains **hidden markers** (bec
 
 ```javascript
 if (youEnjoyedMyPortfolio) {
-  console.log("Hire me? 😎");
+  console.log("Hire me?");
 } else {
   console.log("Try the snow theme anyway ❄️");
 }

@@ -2,7 +2,7 @@
 
 **"I didn’t just rebuild it—I Reactified it. Better, faster, and still kinda funny."**
 
-🌐 [Live Site](https://your-deployment-url.com) | ⚛️ Built with **React + Vite** | 🎮 Mini-Games Included!
+🌐 [Live Site](https://mahak-patel.vercel.app/) | ⚛️ Built with **React + Vite** | 🎮 Mini-Games Included!
 
 ---
 

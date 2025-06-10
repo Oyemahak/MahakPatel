@@ -1,19 +1,20 @@
-// fireworks.js — 🎆 Boom! Boom! Celebration script
+// fireworks.js — 🎆 Celebration logic for MemoryGame
+// Matches Mahak’s dark-themed gamified vibe!
 
 export function createFirework() {
-  const colors = ['#7F5AF0', '#2CB67D', '#FF6E6E']; // Purple, teal, coral
+  const colors = ['#7F5AF0', '#2CB67D', '#FF6E6E']; // Purple, Teal, Coral
   const firework = document.createElement('div');
 
   firework.style.position = 'fixed';
   firework.style.width = '6px';
   firework.style.height = '6px';
   firework.style.borderRadius = '50%';
-  firework.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  firework.style.backgroundColor = randomColor();
   firework.style.left = `${Math.random() * 100}%`;
   firework.style.top = `${Math.random() * 100}%`;
-  firework.style.boxShadow = `0 0 10px 2px ${colors[Math.floor(Math.random() * colors.length)]}`;
   firework.style.zIndex = '999';
   firework.style.pointerEvents = 'none';
+  firework.style.boxShadow = `0 0 12px 3px ${randomColor()}`;
 
   document.getElementById('fireworks')?.appendChild(firework);
 
@@ -29,4 +30,9 @@ export function createFirework() {
   );
 
   animation.onfinish = () => firework.remove();
+}
+
+function randomColor() {
+  const palette = ['#7F5AF0', '#2CB67D', '#FF6E6E'];
+  return palette[Math.floor(Math.random() * palette.length)];
 }

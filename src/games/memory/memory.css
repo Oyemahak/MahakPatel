@@ -1,48 +1,56 @@
-/* memory.css — 🧠 Styles for the Match The Emoji Game */
+/* memory.css — 🧠 Emoji Game UI tuned for Mahak's portfolio */
 
 :root {
-  --primary: #7F5AF0;       /* Vibe-y violet */
-  --secondary: #2CB67D;     /* Soft teal */
-  --accent: #FF6E6E;        /* Pop coral */
-  --dark-bg: #16161A;       /* Dark theme base */
-  --card-bg: #242629;
-  --text-light: #FFFFFE;
+  --primary: #7F5AF0;
+  --secondary: #2CB67D;
+  --accent: #FF6E6E;
+  --dark-bg: #0f172a;
+  --card-bg: #1e293b;
+  --text-light: #f1f5f9;
   --text-gray: #94A1B2;
   --glow: 0 0 15px currentColor;
 }
 
+.memory-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  background: var(--dark-bg);
+}
+
 .memory-container {
   font-family: 'Poppins', sans-serif;
-  background: var(--dark-bg);
+  background: var(--card-bg);
   color: var(--text-light);
   width: 100%;
-  max-width: 420px;
-  margin: 0 auto;
-  padding: 24px;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  max-width: 440px;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .game-title {
-  font-size: 1.8rem;
-  text-align: center;
+  font-size: 2rem;
   font-weight: 600;
-  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .game-stats {
   display: flex;
   justify-content: space-between;
-  color: var(--text-gray);
+  margin-bottom: 1rem;
   font-size: 1rem;
-  margin-bottom: 16px;
+  color: var(--text-gray);
 }
 
 .game-board {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+  margin-bottom: 1.5rem;
 }
 
 .card {
@@ -54,7 +62,7 @@
   justify-content: center;
   align-items: center;
   transform-style: preserve-3d;
-  transition: transform 0.6s ease;
+  transition: transform 0.5s ease;
   cursor: pointer;
   position: relative;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -103,4 +111,25 @@
   height: 100%;
   pointer-events: none;
   z-index: 999;
+}
+
+.back-button-container {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.back-button {
+  padding: 10px 20px;
+  font-weight: 600;
+  background: #1e293b;
+  color: var(--text-light);
+  border: 1px solid var(--text-gray);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: var(--primary);
+  color: white;
 }

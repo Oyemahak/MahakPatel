@@ -1,30 +1,45 @@
-/* touchme.css — 🖱️ Catch Me If You Can game styling */
+/* touchme.css — 🎯 Catch Me If You Can styled for portfolio consistency */
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #60A5FA;
+  --success-color: #22c55e;
+  --text-light: #f9fafb;
+  --dark-bg: #0f172a;
+  --glass-bg: rgba(255, 255, 255, 0.06);
+  --box-border: rgba(255, 255, 255, 0.12);
+}
 
 .touchme-container {
   font-family: 'Open Sans', sans-serif;
   text-align: center;
+  color: var(--text-light);
   padding: 2rem;
-  color: var(--text-color, #333);
+  min-height: 80vh;
+  margin-top: 4rem;
 }
 
 .touchme-text {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-light);
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
 }
 
 .touchme-box {
   position: relative;
+  width: 100%;
+  max-width: 900px;
   height: 60vh;
-  max-width: 800px;
   margin: auto;
-  border: 2px dashed var(--primary-color, #2b82e5);
+  border: 2px dashed var(--primary-color);
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
   overflow: hidden;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(96, 165, 250, 0.2);
 }
 
 #funnyButton {
@@ -32,26 +47,51 @@
   padding: 12px 24px;
   font-size: 1rem;
   color: #fff;
-  background-color: var(--primary-color, #2b82e5);
+  background-color: var(--primary-color);
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(96, 165, 250, 0.4);
+  transition: all 0.25s ease;
+  font-weight: 600;
 }
 
 #funnyButton:hover {
-  background-color: #4caf50;
+  background-color: var(--success-color);
 }
 
-/* Celebration Modal 🎉 */
+#funnyButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  pointer-events: all;
+  position: relative;
+}
+
+/* Tooltip on mobile when game is disabled */
+#funnyButton:disabled::after {
+  content: "❌ Desktop Only: This game is hover-based!";
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #000000d9;
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  z-index: 999;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+/* 🎉 Celebration modal */
 .celebration {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(15, 23, 42, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,52 +107,60 @@
 }
 
 .celebration-content {
-  background: #fff;
+  background: #1e293b;
   padding: 2rem;
   border-radius: 1rem;
   width: 90%;
   max-width: 480px;
   text-align: center;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 25px rgba(96, 165, 250, 0.4);
+  color: var(--text-light);
 }
 
 .celebration-content h1 {
-  color: var(--primary-color, #2b82e5);
-  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.celebration-content p {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-bottom: 1.5rem;
 }
 
 .button-group {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 1rem;
 }
 
 .button-23,
 .button-40 {
   font-family: 'Open Sans', sans-serif;
   padding: 12px 20px;
-  border-radius: 8px;
   font-size: 1rem;
+  border-radius: 8px;
   font-weight: 600;
   border: none;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .button-23 {
-  background-color: #4285F4;
+  background-color: #3b82f6;
   color: #fff;
 }
 
 .button-23:hover {
-  background-color: #357ae8;
+  background-color: #2563eb;
 }
 
 .button-40 {
-  background-color: #202124;
+  background-color: #0f172a;
   color: #fff;
 }
 
 .button-40:hover {
-  background-color: #374151;
+  background-color: #1e293b;
 }

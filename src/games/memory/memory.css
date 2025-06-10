@@ -24,7 +24,8 @@
   background: var(--card-bg);
   color: var(--text-light);
   width: 100%;
-  max-width: 440px;
+  max-height: 540px;
+  max-width: 400px;
   padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
@@ -50,7 +51,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  margin-bottom: 1.5rem;
 }
 
 .card {
@@ -111,25 +111,4 @@
   height: 100%;
   pointer-events: none;
   z-index: 999;
-}
-
-.back-button-container {
-  text-align: center;
-  margin-top: 1.5rem;
-}
-
-.back-button {
-  padding: 10px 20px;
-  font-weight: 600;
-  background: #1e293b;
-  color: var(--text-light);
-  border: 1px solid var(--text-gray);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.back-button:hover {
-  background-color: var(--primary);
-  color: white;
 }

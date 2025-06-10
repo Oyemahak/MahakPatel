@@ -80,12 +80,6 @@ const MemoryGame = () => {
         </div>
 
         <div className="fireworks-container" id="fireworks"></div>
-
-        <div className="back-button-container">
-          <button className="back-button" onClick={() => window.location.href = '/play'}>
-            ← Back to Play
-          </button>
-        </div>
       </div>
     </div>
   );

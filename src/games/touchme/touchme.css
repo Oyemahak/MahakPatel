@@ -16,8 +16,8 @@
   text-align: center;
   color: var(--text-light);
   padding: 2rem;
-  min-height: 80vh;
-  margin-top: 4rem;
+  min-height: 100vh;
+  margin-top: 1rem;
 }
 
 .touchme-text {

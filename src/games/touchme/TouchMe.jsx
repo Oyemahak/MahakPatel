@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import './touchme.css';
+import Footer from '../../components/Footer';
 
 const TouchMe = () => {
   const buttonRef = useRef(null);

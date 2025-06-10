@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import './memory.css';
+import Footer from '../../components/Footer';
 import { createFirework } from './fireworks'; // 🎆 Boom boom yay!
 
 const MemoryGame = () => {

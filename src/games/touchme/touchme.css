@@ -1,0 +1,118 @@
+/* touchme.css — 🖱️ Catch Me If You Can game styling */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+.touchme-container {
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-color, #333);
+}
+
+.touchme-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.touchme-box {
+  position: relative;
+  height: 60vh;
+  max-width: 800px;
+  margin: auto;
+  border: 2px dashed var(--primary-color, #2b82e5);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.95);
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+#funnyButton {
+  position: absolute;
+  padding: 12px 24px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: var(--primary-color, #2b82e5);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+#funnyButton:hover {
+  background-color: #4caf50;
+}
+
+/* Celebration Modal 🎉 */
+.celebration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.celebration.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.celebration-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 480px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+}
+
+.celebration-content h1 {
+  color: var(--primary-color, #2b82e5);
+  margin-bottom: 1rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.button-23,
+.button-40 {
+  font-family: 'Open Sans', sans-serif;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.button-23 {
+  background-color: #4285F4;
+  color: #fff;
+}
+
+.button-23:hover {
+  background-color: #357ae8;
+}
+
+.button-40 {
+  background-color: #202124;
+  color: #fff;
+}
+
+.button-40:hover {
+  background-color: #374151;
+}

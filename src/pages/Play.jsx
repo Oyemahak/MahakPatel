@@ -1,6 +1,7 @@
 import React from 'react';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import { Link } from 'react-router-dom';
 
 const Play = () => {
   return (
@@ -18,18 +19,18 @@ const Play = () => {
             <img src="/assets/images/touch-me-preview.png" alt="Touch Me Game Preview" />
             <h3>Touch Me</h3>
             <p>Test your reflexes with this fast-paced game. Ready, set... tap!</p>
-            <a href="/touchme.html" target="_blank" rel="noopener noreferrer">
+            <Link to="/touchme">
               <button className="resume-button center-btn">Play Now</button>
-            </a>
+            </Link>
           </div>
 
           <div className="project playground-card">
             <img src="/assets/images/emogy-preview.png" alt="Emoji Match Game Preview" />
             <h3>Match Emogy</h3>
             <p>Can your brain keep up with emoji chaos? Find the pairs before the clock runs out!</p>
-            <a href="/matchemogy.html" target="_blank" rel="noopener noreferrer">
+            <Link to="/memorygame">
               <button className="resume-button center-btn">Play Now</button>
-            </a>
+            </Link>
           </div>
         </div>
       </section>

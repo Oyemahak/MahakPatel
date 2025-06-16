@@ -3,18 +3,17 @@ import React, { useEffect, useState } from 'react';
 const Skills = () => {
   const [skills, setSkills] = useState([]);
 
-  // Fetch skills from backend
   useEffect(() => {
     fetch('https://admin-dashboard-mahak.onrender.com/api/skills')
       .then((res) => res.json())
       .then((data) => {
-        const visibleSkills = data.filter((skill) => skill.visible);
+        // ✅ Only keep visible skills
+        const visibleSkills = data.filter(skill => skill.visible);
         setSkills(visibleSkills);
       })
       .catch((err) => console.error('Failed to fetch skills:', err));
   }, []);
 
-  // Group only visible skills
   const categorizedSkills = {
     Development: [],
     'Design & Tools': [],
@@ -22,7 +21,7 @@ const Skills = () => {
   };
 
   skills.forEach((skill) => {
-    if (skill.visible && categorizedSkills[skill.category]) {
+    if (categorizedSkills[skill.category]) {
       categorizedSkills[skill.category].push(skill);
     }
   });
@@ -33,22 +32,16 @@ const Skills = () => {
       <div className="skills-container">
         <div className="skills-grid">
           {Object.entries(categorizedSkills).map(([category, skillsList]) => (
-            skillsList.length > 0 && (
-              <div className="skills-category" key={category}>
-                <h3>{category}</h3>
-                <div className="skills-icons">
-                  {skillsList.map((skill, index) => (
-                    <div
-                      className="skill-icon"
-                      key={index}
-                      title={skill.name}
-                    >
-                      <i className={`devicon-${skill.icon} colored`}></i>
-                    </div>
-                  ))}
-                </div>
+            <div className="skills-category" key={category}>
+              <h3>{category}</h3>
+              <div className="skills-icons">
+                {skillsList.map((skill, index) => (
+                  <div className="skill-icon" key={index} title={skill.name}>
+                    <i className={`devicon-${skill.icon} colored`}></i>
+                  </div>
+                ))}
               </div>
-            )
+            </div>
           ))}
         </div>
       </div>

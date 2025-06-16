@@ -7,7 +7,6 @@ const Skills = () => {
     fetch('https://admin-dashboard-mahak.onrender.com/api/skills')
       .then((res) => res.json())
       .then((data) => {
-        // ✅ Only keep visible skills
         const visibleSkills = data.filter(skill => skill.visible);
         setSkills(visibleSkills);
       })
@@ -40,6 +39,11 @@ const Skills = () => {
                     <i className={`devicon-${skill.icon} colored`}></i>
                   </div>
                 ))}
+
+                {/* ✅ Fallback test icon to check Devicon CSS */}
+                <div className="skill-icon" title="Devicon Check">
+                  <i className="devicon-javascript-plain colored"></i>
+                </div>
               </div>
             </div>
           ))}

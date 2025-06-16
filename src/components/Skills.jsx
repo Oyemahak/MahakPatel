@@ -3,25 +3,24 @@ import React, { useEffect, useState } from 'react';
 const Skills = () => {
   const [skills, setSkills] = useState([]);
 
-  // Fetch skills from the backend
   useEffect(() => {
     fetch('https://admin-dashboard-mahak.onrender.com/api/skills')
       .then((res) => res.json())
-      .then((data) => setSkills(data))
+      .then((data) => {
+        // ✅ Only keep visible skills
+        const visibleSkills = data.filter(skill => skill.visible);
+        setSkills(visibleSkills);
+      })
       .catch((err) => console.error('Failed to fetch skills:', err));
   }, []);
 
-  // ✅ Only include visible skills
-  const visibleSkills = skills.filter(skill => skill.visible);
-
-  // Group visible skills by category
   const categorizedSkills = {
     Development: [],
     'Design & Tools': [],
     'Cloud & Databases': [],
   };
 
-  visibleSkills.forEach((skill) => {
+  skills.forEach((skill) => {
     if (categorizedSkills[skill.category]) {
       categorizedSkills[skill.category].push(skill);
     }
@@ -37,11 +36,7 @@ const Skills = () => {
               <h3>{category}</h3>
               <div className="skills-icons">
                 {skillsList.map((skill, index) => (
-                  <div
-                    className="skill-icon"
-                    key={index}
-                    title={skill.name}
-                  >
+                  <div className="skill-icon" key={index} title={skill.name}>
                     <i className={`devicon-${skill.icon} colored`}></i>
                   </div>
                 ))}

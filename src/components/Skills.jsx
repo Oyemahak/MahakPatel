@@ -1,75 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Skills = () => {
+  const [skills, setSkills] = useState([]);
+
+  // Fetch skills from the backend
+  useEffect(() => {
+    fetch('https://admin-dashboard-mahak.onrender.com/api/skills')
+      .then((res) => res.json())
+      .then((data) => setSkills(data))
+      .catch((err) => console.error('Failed to fetch skills:', err));
+  }, []);
+
+  // Group skills by category
+  const categorizedSkills = {
+    Development: [],
+    'Design & Tools': [],
+    'Cloud & Databases': [],
+  };
+
+  skills.forEach((skill) => {
+    if (categorizedSkills[skill.category]) {
+      categorizedSkills[skill.category].push(skill);
+    }
+  });
+
   return (
     <section id="skills">
       <h2>Professional Skills</h2>
       <div className="skills-container">
         <div className="skills-grid">
-          
-          {/* Development Skills */}
-          <div className="skills-category">
-            <h3>Development</h3>
-            <div className="skills-icons">
-              {[
-                'javascript-plain',
-                'typescript-plain',
-                'react-original',
-                'nodejs-plain',
-                'python-plain',
-                'html5-plain',
-                'css3-plain',
-                'tailwindcss-plain'
-              ].map((icon, index) => (
-                <div className="skill-icon" title={icon.split('-')[0]} key={index}>
-                  <i className={`devicon-${icon} colored`}></i>
-                </div>
-              ))}
+          {Object.entries(categorizedSkills).map(([category, skillsList]) => (
+            <div className="skills-category" key={category}>
+              <h3>{category}</h3>
+              <div className="skills-icons">
+                {skillsList.map((skill, index) => (
+                  <div
+                    className="skill-icon"
+                    key={index}
+                    title={skill.name}
+                  >
+                    <i className={`devicon-${skill.icon} colored`}></i>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-
-          {/* Design & Tools */}
-          <div className="skills-category">
-            <h3>Design & Tools</h3>
-            <div className="skills-icons">
-              {[
-                'figma-plain',
-                'xd-plain',
-                'photoshop-plain',
-                'illustrator-plain',
-                'vscode-plain',
-                'git-plain',
-                'github-original',
-                'jira-plain'
-              ].map((icon, index) => (
-                <div className="skill-icon" title={icon.split('-')[0]} key={index}>
-                  <i className={`devicon-${icon} colored`}></i>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Cloud & Databases */}
-          <div className="skills-category">
-            <h3>Cloud & Databases</h3>
-            <div className="skills-icons">
-              {[
-                'amazonwebservices-plain',
-                'googlecloud-plain',
-                'firebase-plain',
-                'mongodb-plain',
-                'postgresql-plain',
-                'mysql-plain',
-                'docker-plain',
-                'kubernetes-plain'
-              ].map((icon, index) => (
-                <div className="skill-icon" title={icon.split('-')[0]} key={index}>
-                  <i className={`devicon-${icon} colored`}></i>
-                </div>
-              ))}
-            </div>
-          </div>
-
+          ))}
         </div>
       </div>
     </section>

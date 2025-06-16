@@ -8,9 +8,10 @@ const Skills = () => {
       .then((res) => res.json())
       .then((data) => {
         const visibleSkills = data.filter(skill => skill.visible);
+        console.log('✅ Skills from backend:', visibleSkills); // 👈 DEBUG LOG
         setSkills(visibleSkills);
       })
-      .catch((err) => console.error('Failed to fetch skills:', err));
+      .catch((err) => console.error('❌ Failed to fetch skills:', err));
   }, []);
 
   const categorizedSkills = {
@@ -36,12 +37,12 @@ const Skills = () => {
               <div className="skills-icons">
                 {skillsList.map((skill, index) => (
                   <div className="skill-icon" key={index} title={skill.name}>
-                    <i className={`devicon-${skill.icon} colored`}></i>
+                    <i className={`devicon-${skill.icon.trim()} colored`}></i>
                   </div>
                 ))}
 
-                {/* ✅ Fallback test icon to check Devicon CSS */}
-                <div className="skill-icon" title="Devicon Check">
+                {/* Always show fallback test icon */}
+                <div className="skill-icon" title="Test Icon">
                   <i className="devicon-javascript-plain colored"></i>
                 </div>
               </div>

@@ -11,14 +11,17 @@ const Skills = () => {
       .catch((err) => console.error('Failed to fetch skills:', err));
   }, []);
 
-  // Group skills by category
+  // ✅ Only include visible skills
+  const visibleSkills = skills.filter(skill => skill.visible);
+
+  // Group visible skills by category
   const categorizedSkills = {
     Development: [],
     'Design & Tools': [],
     'Cloud & Databases': [],
   };
 
-  skills.forEach((skill) => {
+  visibleSkills.forEach((skill) => {
     if (categorizedSkills[skill.category]) {
       categorizedSkills[skill.category].push(skill);
     }

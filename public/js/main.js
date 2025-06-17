@@ -70,52 +70,19 @@ function waitForThemeButtonsAndInit() {
 
   updateCarousel();
 
-  // Contact Form 💌
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
-  const button = form?.querySelector("button");
-
-  if (form && status && button) {
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      button.disabled = true;
-      button.textContent = "Sending...";
-      const formData = new FormData(form);
-
-      fetch("https://formsubmit.co/ajax/mahakpateluiux@gmail.com", {
-        method: "POST",
-        body: formData,
-      })
-        .then(res => res.json())
-        .then(() => {
-          status.textContent = "🎉 Message sent!";
-          status.style.opacity = "1";
-          setTimeout(() => (status.style.opacity = "0"), 5000);
-          button.disabled = false;
-          button.textContent = "Send Message";
-          form.reset();
-          triggerCelebration();
-        })
-        .catch(() => {
-          status.textContent = "❌ Oops! Try again.";
-          button.disabled = false;
-          button.textContent = "Send Message";
-        });
-    });
-
-    function triggerCelebration() {
-      const emojis = ["🎊", "✨", "🎉", "🎈"];
-      for (let i = 0; i < 64; i++) {
-        const el = document.createElement("span");
-        el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-        el.className = "celebration-emoji";
-        el.style.left = Math.random() * 100 + "vw";
-        el.style.top = Math.random() * -100 + "px";
-        document.body.appendChild(el);
-        setTimeout(() => el.remove(), 3000);
-      }
+  // Contact Form Celebration animation 🎉
+  window.addEventListener('contact:celebrate', () => {
+    const emojis = ['🎊', '✨', '🎉', '🎈'];
+    for (let i = 0; i < 64; i++) {
+      const el = document.createElement('span');
+      el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      el.className = 'celebration-emoji';
+      el.style.left = Math.random() * 100 + 'vw';
+      el.style.top = Math.random() * -100 + 'px';
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 3000);
     }
-  }
+  });
 
   // Mobile Menu 🍔
   const menuButton = document.querySelector('.mobile-menu-icon');

@@ -7,7 +7,7 @@ const WorkedFor = () => {
       <div className="worked-for-container">
         <div className="worked-for-grid">
           <div className="company-14 tooltip">
-            <img src="/assets/images/company1.png" alt="Citi Bank" />
+            <img src="/assets/images/company1.png" alt="Citi (Accenture client)" />
             <span className="tooltiptext">
               Led UX design for internal B2B dashboards. Focused on usability
               improvements, interaction design, and system flows as a core contributor
@@ -31,8 +31,8 @@ const WorkedFor = () => {
             <img src="/assets/images/company4.png" alt="CanSTEM Education" />
             <span className="tooltiptext">
               Redesigned web platforms and managed digital service delivery. Conducted UX
-              research, improved SEO, and enhanced user engagement for an educational
-              client
+              research, improved SEO, and enhanced user engagement for the school's
+              families
             </span>
           </div>
         </div>
@@ -49,7 +49,7 @@ const WorkedFor = () => {
             <img
               className="mobile-companies-img active"
               src="/assets/images/citi.png"
-              alt="Citi Bank"
+              alt="Citi (Accenture client)"
             />
             <img
               className="mobile-companies-img"

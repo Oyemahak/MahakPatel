@@ -13,7 +13,7 @@ const About = () => {
             <span className="highlight"> — currently based in Toronto, Canada.</span>
           </p>
           <p className="bio">
-            Ex-employee of <span className="highlight">Accenture</span> with 3 years of experience working with Citi Bank through Accenture.
+            Ex-employee of <span className="highlight">Accenture</span> with nearly three years of experience (Jan 2021 – Nov 2023) on Citi client programs.
           </p>
           <p className="bio">
             Also took on <span className="highlight">freelance gigs</span> – built the site for Dazzling Smile Dental Clinic and teamed up with TPM (Toronto's oldest theatre).
